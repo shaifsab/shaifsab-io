@@ -1,10 +1,7 @@
 # Ebrahim Ahmed Shaif Miah
 **Full Stack Developer (MERN)**  
 Dhaka, Bangladesh  
-Email: workwithshaif@gmail.com  
-LinkedIn: [linkedin.com/in/shaifsab](https://www.linkedin.com/in/shaifsab)  
-GitHub: [github.com/shaifsab](https://github.com/shaifsab)  
-Portfolio: [Your Portfolio Link]  
+Email: workwithshaif@gmail.com   
 
 ## Summary
 Full Stack Developer (MERN) with expertise in building scalable web applications using JavaScript, React.js, Node.js, Express, and MongoDB. Proficient in creating user-friendly interfaces, optimizing backend performance, and integrating real-time features. Passionate about clean code, seamless user experiences, and collaborative development for continuous improvement.
