@@ -1,0 +1,1285 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* CSS Custom Properties for theming */
+:root {
+  --primary-color: #fef200;
+  --text-color-light: #333333;
+  --text-color-dark: #ffffff;
+  --bg-color-light: #fef200;
+  --bg-color-dark: #1a1a1a;
+  --card-bg-light: #ffffff;
+  --card-bg-dark: #2d2d2d;
+  --border-light: #e0e0e0;
+  --border-dark: #404040;
+  --shadow-light: rgba(0, 0, 0, 0.1);
+  --shadow-dark: rgba(0, 0, 0, 0.3);
+}
+
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  transition: all 0.3s ease;
+  cursor: none;
+}
+
+/* Light theme */
+body.light {
+  background-color: var(--bg-color-light);
+  color: var(--text-color-light);
+}
+
+/* Dark theme */
+body.dark {
+  background-color: var(--bg-color-dark);
+  color: var(--text-color-dark);
+}
+
+/* Custom cursor styles */
+.custom-cursor {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* Navbar Styles */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem 2rem;
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.navbar--light {
+  background: rgba(254, 242, 0, 0.9);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.navbar--dark {
+  background: rgba(26, 26, 26, 0.9);
+  border-bottom: 1px solid var(--border-dark);
+}
+
+.navbar__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.navbar__logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+.navbar__menu {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.navbar__link {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+}
+
+.navbar__icon-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+.navbar__link--active .navbar__icon-wrapper {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.navbar__icon {
+  font-size: 1.2rem;
+}
+
+.navbar__label {
+  font-weight: 500;
+}
+
+/* Home Page Styles */
+.home {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  padding-top: 100px;
+}
+
+.home__container {
+  max-width: 1200px;
+  width: 100%;
+}
+
+.home__content {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.home__image-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.home__image {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid var(--primary-color);
+  box-shadow: 0 10px 30px var(--shadow-light);
+  transition: all 0.3s ease;
+}
+
+.home__text {
+  text-align: left;
+}
+
+.home__title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+body.light .home__name {
+  color: var(--text-color-light);
+}
+
+body.dark .home__name {
+  color: var(--primary-color);
+}
+
+.home__subtitle {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  opacity: 0.8;
+}
+
+.home__description {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  line-height: 1.8;
+  opacity: 0.9;
+}
+
+.home__download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background: var(--primary-color);
+  color: var(--text-color-light);
+  border: none;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(254, 242, 0, 0.3);
+}
+
+.home__download-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(254, 242, 0, 0.4);
+}
+
+.home__download-icon {
+  font-size: 1rem;
+}
+
+.home__scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.home__scroll-arrow {
+  font-size: 2rem;
+  opacity: 0.6;
+}
+
+/* Projects Page Styles */
+.projects-container {
+  min-height: 100vh;
+  padding: 120px 2rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+body.light .projects-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--text-color-light);
+}
+
+body.dark .projects-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.projects-subtitle {
+  font-size: 1.2rem;
+  opacity: 0.8;
+  margin-bottom: 3rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* Project Card Styles */
+.project-card {
+  background: var(--card-bg-light);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px var(--shadow-light);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.dark .project-card {
+  background: var(--card-bg-dark);
+  box-shadow: 0 5px 20px var(--shadow-dark);
+}
+
+.project-card__image-wrapper {
+  position: relative;
+  overflow: hidden;
+  height: 200px;
+}
+
+.project-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-card__image {
+  transform: scale(1.1);
+}
+
+.project-card__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-card:hover .project-card__overlay {
+  opacity: 1;
+}
+
+.project-card__links {
+  display: flex;
+  gap: 1rem;
+}
+
+.project-card__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: var(--primary-color);
+  color: var(--text-color-light);
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.project-card__content {
+  padding: 1.5rem;
+}
+
+.project-card__title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.project-card__description {
+  font-size: 1rem;
+  opacity: 0.8;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.project-card__tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.project-card__tech {
+  padding: 0.3rem 0.8rem;
+  background: var(--primary-color);
+  color: var(--text-color-light);
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.project-card__tech--more {
+  background: rgba(255, 255, 255, 0.2);
+  color: inherit;
+}
+
+/* Project Modal Styles */
+.project-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 2rem;
+}
+
+.project-modal__content {
+  background: var(--card-bg-light);
+  border-radius: 20px;
+  max-width: 800px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.dark .project-modal__content {
+  background: var(--card-bg-dark);
+}
+
+.project-modal__close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: inherit;
+  z-index: 1;
+}
+
+.project-modal__image-wrapper {
+  height: 300px;
+  overflow: hidden;
+  border-radius: 20px 20px 0 0;
+}
+
+.project-modal__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-modal__details {
+  padding: 2rem;
+}
+
+.project-modal__title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.project-modal__description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.project-modal__tech-stack h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.project-modal__tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.project-modal__tech {
+  padding: 0.5rem 1rem;
+  background: var(--primary-color);
+  color: var(--text-color-light);
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+.project-modal__links {
+  display: flex;
+  gap: 1rem;
+}
+
+.project-modal__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 1.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.project-modal__link--demo {
+  background: var(--primary-color);
+  color: var(--text-color-light);
+}
+
+.project-modal__link--github {
+  background: transparent;
+  color: inherit;
+  border: 2px solid var(--primary-color);
+}
+
+/* Figma Section Styles */
+.figma-section {
+  margin-top: 4rem;
+  padding-top: 3rem;
+  border-top: 2px solid var(--border-light);
+}
+
+.dark .figma-section {
+  border-top-color: var(--border-dark);
+}
+
+.figma-section__title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+body.light .figma-section__title {
+  color: var(--text-color-light);
+}
+
+body.dark .figma-section__title {
+  color: var(--primary-color);
+}
+
+.figma-section__subtitle {
+  font-size: 1.2rem;
+  opacity: 0.8;
+  margin-bottom: 3rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.figma-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* Figma Card Styles */
+.figma-card {
+  background: var(--card-bg-light);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px var(--shadow-light);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.dark .figma-card {
+  background: var(--card-bg-dark);
+  box-shadow: 0 5px 20px var(--shadow-dark);
+}
+
+.figma-card:hover {
+  border-color: var(--primary-color);
+}
+
+.figma-card__image-wrapper {
+  position: relative;
+  overflow: hidden;
+  height: 200px;
+}
+
+.figma-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.figma-card:hover .figma-card__image {
+  transform: scale(1.1);
+}
+
+.figma-card__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.figma-card:hover .figma-card__overlay {
+  opacity: 1;
+}
+
+.figma-card__links {
+  display: flex;
+  gap: 1rem;
+}
+
+.figma-card__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: var(--primary-color);
+  color: var(--text-color-light);
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.figma-card__link:hover {
+  transform: scale(1.1);
+  background: #e6d600;
+}
+
+.figma-card__content {
+  padding: 1.5rem;
+}
+
+.figma-card__title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.figma-card__description {
+  font-size: 1rem;
+  opacity: 0.8;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.figma-card__tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.figma-card__tech {
+  padding: 0.3rem 0.8rem;
+  background: var(--primary-color);
+  color: var(--text-color-light);
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.figma-card__tech--more {
+  background: rgba(255, 255, 255, 0.2);
+  color: inherit;
+}
+
+/* Figma Modal Styles */
+.figma-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 2rem;
+}
+
+.figma-modal__content {
+  background: var(--card-bg-light);
+  border-radius: 20px;
+  max-width: 800px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.dark .figma-modal__content {
+  background: var(--card-bg-dark);
+}
+
+.figma-modal__close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: inherit;
+  z-index: 1;
+}
+
+.figma-modal__image-wrapper {
+  height: 300px;
+  overflow: hidden;
+  border-radius: 20px 20px 0 0;
+}
+
+.figma-modal__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.figma-modal__details {
+  padding: 2rem;
+}
+
+.figma-modal__title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.figma-modal__description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.figma-modal__tech-stack h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.figma-modal__tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.figma-modal__tech {
+  padding: 0.5rem 1rem;
+  background: var(--primary-color);
+  color: var(--text-color-light);
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+.figma-modal__links {
+  display: flex;
+  gap: 1rem;
+}
+
+.figma-modal__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 1.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.figma-modal__link--figma {
+  background: var(--primary-color);
+  color: var(--text-color-light);
+}
+
+.figma-modal__link--prototype {
+  background: transparent;
+  color: inherit;
+  border: 2px solid var(--primary-color);
+}
+
+.figma-modal__link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(254, 242, 0, 0.3);
+}
+
+/* Contact Page Styles */
+.contact {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 2rem 2rem;
+  text-align: center;
+}
+
+.contact h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.contact p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  opacity: 0.8;
+}
+
+.contact__email {
+  margin-bottom: 2rem;
+}
+
+body.light .contact__email a {
+  font-size: 1.5rem;
+  color: var(--text-color-light);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+body.dark .contact__email a {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.contact__social-icons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.contact__social-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background: var(--primary-color);
+  color: var(--text-color-light);
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.contact__social-icons a:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(254, 242, 0, 0.3);
+}
+
+/* Theme Toggle Styles */
+.theme-toggle {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.theme-toggle--light {
+  color: var(--text-color-light);
+}
+
+.theme-toggle--dark {
+  color: #ffffff;
+}
+
+.theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Page Indicator Styles */
+.page-indicator {
+  position: fixed;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1000;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.page-indicator__dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  border: 2px solid var(--primary-color);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.page-indicator__dot--active {
+  background: var(--primary-color);
+  transform: scale(1.2);
+}
+
+.page-indicator__label {
+  position: absolute;
+  right: 25px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.page-indicator__dot:hover .page-indicator__label {
+  opacity: 1;
+}
+
+.page-indicator__instruction {
+  font-size: 0.7rem;
+  color: var(--primary-color);
+  text-align: center;
+  margin-top: 1rem;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+/* React Section Styles */
+.react-section {
+  margin-top: 4rem;
+  padding-top: 3rem;
+  border-top: 2px solid var(--border-light);
+}
+
+.dark .react-section {
+  border-top-color: var(--border-dark);
+}
+
+.react-section__title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+body.light .react-section__title {
+  color: var(--text-color-light);
+}
+
+body.dark .react-section__title {
+  color: var(--primary-color);
+}
+
+.react-section__subtitle {
+  font-size: 1.2rem;
+  opacity: 0.8;
+  margin-bottom: 3rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.react-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* React Card Styles */
+.react-card {
+  background: var(--card-bg-light);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px var(--shadow-light);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.dark .react-card {
+  background: var(--card-bg-dark);
+  box-shadow: 0 5px 20px var(--shadow-dark);
+}
+
+.react-card:hover {
+  border-color: var(--primary-color);
+}
+
+.react-card__image-wrapper {
+  position: relative;
+  overflow: hidden;
+  height: 200px;
+}
+
+.react-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.react-card:hover .react-card__image {
+  transform: scale(1.1);
+}
+
+.react-card__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.react-card:hover .react-card__overlay {
+  opacity: 1;
+}
+
+.react-card__links {
+  display: flex;
+  gap: 1rem;
+}
+
+.react-card__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: var(--primary-color);
+  color: var(--text-color-light);
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.react-card__link:hover {
+  transform: scale(1.1);
+  background: #e6d600;
+}
+
+.react-card__content {
+  padding: 1.5rem;
+}
+
+.react-card__title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.react-card__description {
+  font-size: 1rem;
+  opacity: 0.8;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.react-card__tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.react-card__tech {
+  padding: 0.3rem 0.8rem;
+  background: var(--primary-color);
+  color: var(--text-color-light);
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.react-card__tech--more {
+  opacity: 0.7;
+  font-style: italic;
+}
+
+/* React Modal Styles */
+.react-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 2rem;
+}
+
+.react-modal__content {
+  background: var(--card-bg-light);
+  border-radius: 20px;
+  max-width: 800px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.dark .react-modal__content {
+  background: var(--card-bg-dark);
+}
+
+.react-modal__close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: inherit;
+  z-index: 1;
+}
+
+.react-modal__image-wrapper {
+  height: 300px;
+  overflow: hidden;
+  border-radius: 20px 20px 0 0;
+}
+
+.react-modal__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.react-modal__details {
+  padding: 2rem;
+}
+
+.react-modal__title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.react-modal__description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.react-modal__tech-stack h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.react-modal__tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.react-modal__tech {
+  padding: 0.5rem 1rem;
+  background: var(--primary-color);
+  color: var(--text-color-light);
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+.react-modal__links {
+  display: flex;
+  gap: 1rem;
+}
+
+.react-modal__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 1.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.react-modal__link--live {
+  background: var(--primary-color);
+  color: var(--text-color-light);
+}
+
+.react-modal__link--github {
+  background: transparent;
+  color: inherit;
+  border: 2px solid var(--primary-color);
+}
+
+.react-modal__link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(254, 242, 0, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem;
+  }
+  
+  .navbar__container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .navbar__menu {
+    gap: 1rem;
+  }
+  
+  .navbar__label {
+    display: none;
+  }
+  
+  .home__content {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 2rem;
+  }
+  
+  .home__title {
+    font-size: 2rem;
+  }
+  
+  .home__image {
+    width: 250px;
+    height: 250px;
+  }
+  
+  .projects-grid, .figma-grid, .react-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .project-modal__content, .figma-modal__content, .react-modal__content {
+    margin: 1rem;
+    max-height: 85vh;
+  }
+  
+  .project-modal__details, .figma-modal__details, .react-modal__details {
+    padding: 1.5rem;
+  }
+  
+  .project-modal__links, .figma-modal__links, .react-modal__links {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .home {
+    padding: 1rem;
+    padding-top: 120px;
+  }
+  
+  .home__title {
+    font-size: 1.8rem;
+  }
+  
+  .home__subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .projects-container {
+    padding: 140px 1rem 1rem;
+  }
+  
+  .project-modal {
+    padding: 1rem;
+  }
+  
+  .page-indicator {
+    right: 1rem;
+  }
+  
+  .page-indicator__instruction {
+    display: none;
+  }
+}
