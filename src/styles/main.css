@@ -1207,7 +1207,7 @@ body.dark .react-section__title {
   }
   
   .navbar__container {
-    flex-direction: column;
+/*     flex-direction: column; */
     gap: 1rem;
   }
   
